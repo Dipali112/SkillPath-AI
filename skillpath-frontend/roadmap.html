@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My roadmap — SkillPath AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="quiz-wrap">
+    <span class="eyebrow">My learning roadmap</span>
+    <h1 style="font-size:clamp(1.8rem,3vw,2.6rem)" id="roadmap-title">Your roadmap</h1>
+
+    <p id="roadmap-error" class="form-error hidden" role="alert"></p>
+
+    <!-- Shown when there is no roadmap yet -->
+    <div class="card empty hidden" id="roadmap-empty">
+      <h3>No roadmap yet</h3>
+      <p>Take a skill quiz and we'll build a step-by-step plan from your missing skills.</p>
+      <a class="btn btn-primary" href="quiz.html">Take the skill quiz</a>
+    </div>
+
+    <!-- Shown when a roadmap exists -->
+    <div id="roadmap-content" class="hidden">
+      <div class="card" style="margin:16px 0 32px">
+        <div class="card-title">
+          <h3 id="roadmap-progress-text"></h3>
+          <span class="muted" id="roadmap-date" style="font-size:.9rem"></span>
+        </div>
+        <div class="progress"><div class="progress-bar" id="roadmap-bar" style="width:0"></div></div>
+      </div>
+      <div class="quiz-nav">
+        <button type="button" class="btn btn-outline" id="advice-btn">Get AI advice</button>
+        <button type="button" class="btn btn-primary" id="replan-btn">Re-plan my roadmap</button>
+      </div>
+      <p id="roadmap-status" class="muted" role="status" aria-live="polite"></p>
+      <section id="roadmap-advice" class="hidden" aria-labelledby="advice-title">
+        <h2 id="advice-title">Your AI advice</h2>
+        <p id="advice-text" style="white-space:pre-wrap;overflow-wrap:anywhere"></p>
+      </section>
+      <ol class="timeline" id="timeline"></ol>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/roadmap.js"></script>
+</body>
+</html>

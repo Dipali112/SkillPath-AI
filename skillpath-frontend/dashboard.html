@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — SkillPath AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="container">
+    <div class="dash-head">
+      <div>
+        <p class="muted" style="margin:0" id="today"></p>
+        <h1 id="welcome">Welcome back</h1>
+      </div>
+      <a class="btn btn-primary" href="quiz.html">Take a skill quiz</a>
+    </div>
+
+    <!-- Quick stats -->
+    <div class="grid grid-3" style="margin-bottom:24px">
+      <div class="card stat"><strong id="stat-score">—</strong><span>Readiness score</span></div>
+      <div class="card stat"><strong id="stat-gaps">—</strong><span>Skills to learn</span></div>
+      <div class="card stat"><strong id="stat-progress">—</strong><span>Roadmap completed</span></div>
+    </div>
+
+    <div class="dash-grid">
+      <!-- Left column -->
+      <div class="stack">
+        <div class="card">
+          <div class="card-title">
+            <h3>Latest gap report</h3>
+            <span class="muted" id="report-date" style="font-size:.9rem"></span>
+          </div>
+          <div id="report-body"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <h3>Next steps on your roadmap</h3>
+            <a href="roadmap.html">Open roadmap →</a>
+          </div>
+          <div class="progress" style="margin-bottom:16px"><div class="progress-bar" id="roadmap-bar" style="width:0"></div></div>
+          <ul class="skill-list" id="next-steps"></ul>
+        </div>
+      </div>
+
+      <!-- Right column: profile -->
+      <aside class="card" style="align-self:start">
+        <h3>Your profile</h3>
+        <p class="muted" style="font-size:.9rem">This helps us suggest the right roles.</p>
+        <form id="profile-form">
+          <div class="form-group">
+            <label for="target-role">Target role</label>
+            <select id="target-role"></select>
+          </div>
+          <div class="form-group">
+            <label for="current-skills">Current skills</label>
+            <textarea id="current-skills" placeholder="e.g. HTML, CSS, basic JavaScript"></textarea>
+            <div class="form-hint">Separate skills with commas.</div>
+          </div>
+          <button class="btn btn-primary btn-block" type="submit">Save profile</button>
+        </form>
+      </aside>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

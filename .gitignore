@@ -1,0 +1,14 @@
+# Mac system files
+.DS_Store
+
+# Sensitive environment variables (protects your Gemini API key & DB password)
+.env
+skillpath-backend/.env
+
+# Heavy dependencies
+node_modules/
+skillpath-backend/node_modules/
+
+# Logs
+npm-debug.log*
+

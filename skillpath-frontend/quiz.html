@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skill quiz — SkillPath AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="quiz-wrap">
+    <p id="quiz-status" class="muted" role="status" aria-live="polite"></p>
+    <p id="quiz-error" class="form-error hidden" role="alert"></p>
+
+    <!-- Step A: choose a role (shown when no ?role= in the URL) -->
+    <section id="pick-role" class="hidden">
+      <span class="eyebrow">Skill quiz</span>
+      <h1 style="font-size:clamp(1.8rem,3vw,2.6rem)">Which role are you aiming for?</h1>
+      <p class="muted">We'll ask how comfortable you are with each skill that role needs.</p>
+      <div class="role-picker" id="role-picker"></div>
+    </section>
+
+    <!-- Step B: one question per skill -->
+    <section id="quiz" class="hidden">
+      <div class="quiz-progress">
+        <span id="quiz-role"></span>
+        <span id="quiz-count"></span>
+      </div>
+      <div class="progress"><div class="progress-bar" id="quiz-bar" style="width:0"></div></div>
+
+      <div class="question">
+        <h2 id="quiz-question"></h2>
+        <div class="options" id="quiz-options" role="radiogroup"></div>
+      </div>
+
+      <div class="quiz-nav">
+        <button class="btn btn-outline" id="prev-btn">← Back</button>
+        <button class="btn btn-primary" id="next-btn" disabled>Next →</button>
+      </div>
+    </section>
+
+    <!-- Step C: result / gap report -->
+    <section id="result" class="hidden">
+      <span class="eyebrow">Your gap report</span>
+      <h1 style="font-size:clamp(1.8rem,3vw,2.6rem)" id="result-title"></h1>
+
+      <div class="card" style="margin:24px 0">
+        <div class="result-score">
+          <div class="ring" id="result-ring"><div class="ring-inner" id="result-score"></div></div>
+          <div>
+            <h3 id="result-label"></h3>
+            <p class="muted" id="result-text" style="margin:0"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="card-title"><h3>Skills to learn</h3><span class="badge badge-gap" id="missing-count"></span></div>
+          <ul class="skill-list" id="missing-list"></ul>
+        </div>
+        <div class="card">
+          <div class="card-title"><h3>Your strengths</h3><span class="badge badge-ok" id="strong-count"></span></div>
+          <ul class="skill-list" id="strong-list"></ul>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px">
+        <a class="btn btn-primary btn-lg" href="roadmap.html">View my roadmap</a>
+        <a class="btn btn-outline btn-lg" href="quiz.html">Take another quiz</a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkillPath AI — Career guidance for IT job seekers</title>
+  <meta name="description" content="Pick an IT role, take a quick skill quiz, see your skill gaps and follow a step-by-step learning roadmap." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Header is filled in by js/main.js -->
+  <header id="site-header"></header>
+
+  <main>
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1>Know your skill gaps. <em>Land the IT job.</em></h1>
+          <p class="hero-lead">Choose the role you want, take a 3-minute skill quiz and get a personal learning roadmap with free resources.</p>
+
+          <!-- Search sends the visitor to the roles page -->
+          <form class="search-box" id="hero-search" role="search">
+            <input type="search" id="hero-search-input" placeholder="Search roles, e.g. Frontend Developer" aria-label="Search roles" />
+            <button class="btn btn-primary" type="submit">Search</button>
+          </form>
+
+          <div class="popular">
+            <span>Popular:</span>
+            <a class="chip" href="roles.html?q=frontend">Frontend</a>
+            <a class="chip" href="roles.html?q=backend">Backend</a>
+            <a class="chip" href="roles.html?q=data">Data Analyst</a>
+            <a class="chip" href="roles.html?q=devops">DevOps</a>
+          </div>
+        </div>
+
+        <!-- Example gap report card -->
+        <aside class="hero-card" aria-label="Example skill gap report">
+          <span class="hero-badge">Sample report</span>
+          <h3>Frontend Developer</h3>
+          <p class="muted">Your readiness score</p>
+          <div class="progress" style="margin:8px 0 20px;background:rgba(255,255,255,.12)">
+            <div class="progress-bar" style="width:62%"></div>
+          </div>
+          <div class="skill-row"><span>HTML</span><span class="badge badge-ok">Strong</span></div>
+          <div class="skill-row"><span>CSS</span><span class="badge badge-ok">Strong</span></div>
+          <div class="skill-row"><span>JavaScript</span><span class="badge badge-warn">Improve</span></div>
+          <div class="skill-row"><span>React</span><span class="badge badge-gap">Missing</span></div>
+          <div class="skill-row"><span>Frontend Testing</span><span class="badge badge-gap">Missing</span></div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===== Trust strip ===== -->
+    <section class="trust">
+      <div class="container">
+        <p>Learn with free resources from</p>
+        <div class="trust-logos">
+          <span>MDN</span><span>freeCodeCamp</span><span>GitHub</span><span>Kaggle</span><span>AWS</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Roles grid (filled by JS below) ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Browse roles by career path</h2>
+            <p>Each role comes with a skill list in the order you should learn it.</p>
+          </div>
+          <a class="btn btn-outline" href="roles.html">See all roles</a>
+        </div>
+        <div class="grid grid-3" id="home-roles"></div>
+      </div>
+    </section>
+
+    <!-- ===== How it works ===== -->
+    <section class="section section--soft">
+      <div class="container">
+        <span class="eyebrow">How it works</span>
+        <h2>Three steps from confused to job-ready</h2>
+        <div class="grid grid-3" style="margin-top:32px">
+          <div class="card">
+            <div class="step-num">1</div>
+            <h3>Pick your target role</h3>
+            <p class="muted">Frontend, Backend, Full Stack, Data or DevOps — see exactly which skills each one needs.</p>
+          </div>
+          <div class="card">
+            <div class="step-num">2</div>
+            <h3>Take the skill quiz</h3>
+            <p class="muted">Rate yourself on every skill. We turn your answers into a readiness score and gap report.</p>
+          </div>
+          <div class="card">
+            <div class="step-num">3</div>
+            <h3>Follow your roadmap</h3>
+            <p class="muted">Get the missing skills in learning order with a free resource for each. Tick them off as you go.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Dark panel ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="panel">
+          <div>
+            <span class="eyebrow">For job seekers</span>
+            <h2>Stop guessing what to learn next</h2>
+            <ul>
+              <li>A clear list of skills employers expect for each role</li>
+              <li>A personal gap report after every quiz</li>
+              <li>Progress tracking on your dashboard</li>
+            </ul>
+            <a class="btn btn-primary btn-lg" href="signup.html">Create free account</a>
+          </div>
+          <div class="stat-grid">
+            <div class="stat-box"><strong>5</strong>career paths</div>
+            <div class="stat-box"><strong>39</strong>skills mapped</div>
+            <div class="stat-box"><strong>3 min</strong>skill quiz</div>
+            <div class="stat-box"><strong>100%</strong>free resources</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Call to action ===== -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="cta">
+          <h2>Ready to find your path?</h2>
+          <p>Take the skill quiz now — it only takes a few minutes and you'll get your roadmap right away.</p>
+          <a class="btn btn-primary btn-lg" href="quiz.html">Start the skill quiz</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Home page: show role cards and handle the search box
+    document.addEventListener("DOMContentLoaded", async () => {
+      const roles = await Api.getRoles();
+      document.getElementById("home-roles").innerHTML = roles
+        .map(
+          (r) => `
+          <a class="card card-hover role-card" href="roles.html?q=${encodeURIComponent(r.role_name)}">
+            <div class="role-icon">${r.icon}</div>
+            <h3>${escapeHtml(r.role_name)}</h3>
+            <p class="muted" style="margin:0">${escapeHtml(r.summary)}</p>
+            <div class="role-meta"><span>${r.skills.length} skills</span><span>${escapeHtml(r.category)}</span></div>
+          </a>`
+        )
+        .join("");
+
+      document.getElementById("hero-search").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const q = document.getElementById("hero-search-input").value.trim();
+        location.href = "roles.html" + (q ? "?q=" + encodeURIComponent(q) : "");
+      });
+    });
+  </script>
+</body>
+</html>
